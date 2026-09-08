@@ -24,6 +24,9 @@ nav .nav-container {
 }
 
 nav .logo {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1.8rem;
     font-weight: 800;
     background: linear-gradient(45deg, var(--accent), var(--accent-2));
