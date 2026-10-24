@@ -10,6 +10,16 @@ const projects = [
   },
 
   {
+    title: "TriCo - Online Code Editor",
+    description: "TriCo is a modern, responsive web-based code editor built with React that allows you to write HTML, CSS, and JavaScript code with live preview functionality.",
+    tags: ["React JS", "Tailwind CSS"],
+    imageClass: "project-23",
+    link: "https://girish18-trico-landing.netlify.app/",
+    keywords: "trico online code editor react tailwind",
+    category: "web app",
+  },
+
+  {
     title: "MotionOnScroll (MOS)",
     description: "MotionOnScroll (MOS) is a tiny, dependency-free library that makes it easy to add polished scroll-triggered animations to your website.",
     tags: ["HTML", "CSS", "JavaScript"],
