@@ -253,32 +253,23 @@
     font-size: 0.72rem;
 }
 
-.progress-track {
-    position: relative;
+.skill-level-blocks {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.skill-level-blocks span {
     width: 100%;
-    height: 12px;
+    height: 10px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    overflow: hidden;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.12);
 }
 
-.progress-fill {
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: var(--level);
-    border-radius: inherit;
-    background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%);
-    box-shadow: 0 0 16px rgba(255, 107, 53, 0.4);
-    animation: fillBar 1.4s ease forwards;
-    transform-origin: left center;
-    transform: scaleX(0);
-}
-
-@keyframes fillBar {
-    to {
-        transform: scaleX(1);
-    }
+.skill-level-blocks span.active {
+    /* background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent) 100%); */
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.25);
 }
 
 .tech-stck-section {
