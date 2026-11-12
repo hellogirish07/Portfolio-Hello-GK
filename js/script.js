@@ -44,6 +44,28 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Page scroll progress
+const scrollProgress = document.querySelector(".scroll-progress");
+const scrollProgressBar = document.querySelector(".scroll-progress-bar");
+
+function updateScrollProgress() {
+  if (!scrollProgress || !scrollProgressBar) return;
+
+  const scrollableHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const progress =
+    scrollableHeight > 0
+      ? Math.min((window.scrollY / scrollableHeight) * 100, 100)
+      : 0;
+
+  scrollProgressBar.style.width = `${progress}%`;
+  scrollProgress.setAttribute("aria-valuenow", `${Math.round(progress)}`);
+}
+
+window.addEventListener("scroll", updateScrollProgress);
+window.addEventListener("resize", updateScrollProgress);
+updateScrollProgress();
+
 // Scroll animations
 const observerOptions = {
   threshold: 0.1,
@@ -90,24 +112,6 @@ window.addEventListener("load", () => {
   typeWriter(heroTitle, originalText, 150);
 });
 
-// Smooth reveal animations for skill items
-// const skillItems = document.querySelectorAll(".skill-item");
-// skillItems.forEach((item, index) => {
-//   item.style.animationDelay = `${index * 0.1}s`;
-// });
-
-// Project cards hover effect
-// const projectCards = document.querySelectorAll(".project-card");
-// projectCards.forEach((card) => {
-//   card.addEventListener("mouseenter", () => {
-//     card.style.transform = "translateY(-15px) scale(1.02)";
-//   });
-
-//   card.addEventListener("mouseleave", () => {
-//     card.style.transform = "translateY(0) scale(1)";
-//   });
-// });
-
 // Add loading animation
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
@@ -146,19 +150,6 @@ function back() {
   window.location.href = "index.html";
 }
 
-// Search functionality for projects
-// const searchBar = document.getElementById("search-bar");
-// searchBar.addEventListener("input", function () {
-//     let query = searchBar.value.toLowerCase();
-//     let projects = document.querySelectorAll(".project-card");
-
-//     projects.forEach((project) => {
-//         let keywords = project.dataset.name.toLowerCase().split(", ");
-//         let match = keywords.some((keyword) => keyword.includes(query));
-//         project.style.display = match ? "block" : "none";
-//     });
-// });
-
 const searchBar = document.getElementById("search-bar");
 searchBar.addEventListener("input", function () {
   let query = searchBar.value.toLowerCase();
@@ -190,4 +181,3 @@ filterButtons.forEach((button) => {
     }
   });
 });
-

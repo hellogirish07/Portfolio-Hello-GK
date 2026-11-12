@@ -23,6 +23,19 @@ nav .nav-container {
     height: 70px;
 }
 
+.scroll-progress {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-progress-bar {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width 80ms linear;
+}
+
 nav .logo {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
